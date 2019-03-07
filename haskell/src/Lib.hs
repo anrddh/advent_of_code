@@ -2,7 +2,7 @@ module Lib
     ( run
     ) where
 
-import Day01_2015
+import Day02_2015
 
 run :: IO ()
-run = run2015day01
+run = run2015day02

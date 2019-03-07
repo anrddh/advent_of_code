@@ -39,6 +39,10 @@ int part_one(FILE *inp) {
     return paper_area;
 }
 
+int get_paper_area(int l, int w, int h) {
+    return (2*l*w) + (2*w*h) + (2*h*l) + get_slack(l,w,h);
+}
+
 int get_slack(int l, int w, int h) {
     if (l <= w) { 
         if (h <= w) // l,h <= w
@@ -51,10 +55,6 @@ int get_slack(int l, int w, int h) {
         else // w < l < h
             return w * l;
     }
-}
-
-int get_paper_area(int l, int w, int h) {
-    return (2*l*w) + (2*w*h) + (2*h*l) + get_slack(l,w,h);
 }
 
 int part_two(FILE *inp) {
